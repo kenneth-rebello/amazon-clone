@@ -1,0 +1,21 @@
+.checkout{
+    margin: 0;
+    display: flex;
+}
+
+.checkout__ad{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.checkout__title{
+    margin: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.checkout__card{
+    padding: 20px;
+    margin: 30px;
+    background-color: white;
+}

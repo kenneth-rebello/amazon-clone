@@ -2,16 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Search, ShoppingBasket } from '@material-ui/icons';
 import './Header.css';
-import { useContextState } from '../../context/Provider';
+import { useContextValue } from '../../context/Provider';
 import { auth } from '../../firebase/firebase';
 
 const Header = () => {
 
-    const [ {basket, user}, dispatch ] = useContextState();
+    const [ {basket, user}, dispatch ] = useContextValue();
 
     const handleAuth = () =>{
         if(user){
             auth.signOut();
+        }
+    }
+
+    const userTag = () =>{
+        if(user){
+            return user.email.split("@")[0]
         }
     }
 
@@ -34,14 +40,14 @@ const Header = () => {
             <div className="header__nav">
                 <Link to={!user && "/login"} className="header__link">
                     <div className="header__option" onClick={handleAuth}>
-                        <span>Hello,</span>
+                        <span>Hello{` `}{user ? userTag() :''},</span>
                         <span>{user ? 'Sign Out' : 'Sign In'}</span>
                     </div>                
                 </Link>
             </div>
 
             <div className="header__nav">
-                <Link to="/" className="header__link">
+                <Link to="/orders" className="header__link">
                     <div className="header__option">
                         <span>Returns</span>
                         <span>& Orders</span>

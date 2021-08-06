@@ -1,13 +1,13 @@
 import React from 'react';
 import './Checkout.css'
 
-import { useContextState } from '../../context/Provider'
+import { useContextValue } from '../../context/Provider'
 import CheckoutItem from './CheckoutItem';
 import Subtotal from './Subtotal';
 
 const Checkout = () => {
 
-    const [{basket, user}] = useContextState()
+    const [{basket, user}] = useContextValue();
 
     return (
         <div className="checkout">

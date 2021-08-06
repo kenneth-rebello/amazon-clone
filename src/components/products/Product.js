@@ -1,10 +1,10 @@
 import React from 'react'
-import { useContextState } from '../../context/Provider'
+import { useContextValue } from '../../context/Provider'
 import './Product.css'
 
 const Product = ({id, title, imageUrl, price, rating}) => {
 
-    const [ {basket}, dispatch] = useContextState();
+    const [ {basket}, dispatch] = useContextValue();
 
     const addToBasket = () => {
         dispatch({

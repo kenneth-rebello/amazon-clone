@@ -3,6 +3,9 @@ export const initialState = {
     user: null
 }
 
+export const getBasketTotal = (basket) => 
+  basket?.reduce((amount, item) => item.price + amount, 0);
+
 const reducer = (state, action) => {
     switch(action.type){
         case 'ADD_TO_BASKET':
@@ -15,6 +18,11 @@ const reducer = (state, action) => {
                 ...state,
                 basket: [...state.basket.filter(item => item.id !== action.id)]
             };
+        case 'EMPTY_BASKET':
+            return{
+                ...state,
+                basket: []
+            }
         case 'USER_LOGIN':
             return {
                 ...state,

@@ -1,10 +1,10 @@
 import React from 'react';
-import { useContextState } from '../../context/Provider';
+import { useContextValue } from '../../context/Provider';
 import './CheckoutItem.css'
 
-const CheckoutItem = ({id, title, imageUrl, price, rating}) => {
+const CheckoutItem = ({id, title, imageUrl, price, rating, hideRemoveButton}) => {
 
-    const [{basket}, dispatch]  = useContextState();
+    const [{basket}, dispatch]  = useContextValue();
 
     const removeFromBasket = () => {
         dispatch({
@@ -30,8 +30,9 @@ const CheckoutItem = ({id, title, imageUrl, price, rating}) => {
                     {Array(rating).fill().map((_) => (<p>&#11088;</p>))}
                 </div>
 
-                <button onClick={()=>removeFromBasket()}>Remove from basket</button>
+                {!hideRemoveButton &&<button onClick={()=>removeFromBasket()}>Remove from basket</button>}
 
+                <br/>
                 <hr/>
             </div>
         </div>

@@ -15,8 +15,6 @@ import { db } from '../../firebase/firebase';
 const Payment = () => {
 
     const [{basket, user}, dispatch] = useContextValue();
-    console.log(user?.id)
-    console.log(user?.uid)
     const [clientSecret, setClientSecret] = useState("null");
     const [intent, setIntent] = useState({});
     const [succeeded, setSucceeded] = useState(false);

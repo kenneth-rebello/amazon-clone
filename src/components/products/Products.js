@@ -65,20 +65,6 @@ const products = [
         price: 2850,
         rating: 3,
         imageUrl: "https://images-na.ssl-images-amazon.com/images/I/71V7D-quLsS.__AC_SY300_SX300_QL70_FMwebp_.jpg",
-    },
-    {
-        id: "733929",
-        title: "Womens Blue Top",
-        price: 8372,
-        rating: 3,
-        imageUrl: "https://m.media-amazon.com/images/I/71+X2LivXuL._UL1500_.jpg"
-    },
-    {
-        id: "733948",
-        title: "Mens Polo",
-        price: 4000,
-        rating: 4,
-        imageUrl: "https://m.media-amazon.com/images/I/81L9f1n4pGL._AC_UL480_FMwebp_QL65_.jpg"
     }
 ]
 
